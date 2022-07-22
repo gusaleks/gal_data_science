@@ -19,8 +19,6 @@ def random_predict(number: int = 1) -> int:
     num_min = 1
     num_max = 101
     
-    print("Загадано число  ", number)
-    
     predict_number = np.random.randint(1, 101) # предполагаемое число
     
         
@@ -28,10 +26,10 @@ def random_predict(number: int = 1) -> int:
         count += 1
         
         if number < predict_number:
-            num_max = predict_number - 1
+            num_max = predict_number - 1 # уменьшаем максимальную границу диапазона поиска числа
             predict_number = (num_max + num_min) // 2   
         elif number > predict_number:
-            num_min = predict_number + 1
+            num_min = predict_number + 1 # увеличиваем минимальную границу диапазона поиска числа
             predict_number = (num_max + num_min) // 2
         else:
             break
